@@ -7,6 +7,7 @@ import argparse
 
 from pathlib import Path
 BASE_PATH = str(Path(__file__).resolve().parent.parent.parent) # BASE_PATH: /Users/yhhan/git/link_dl
+print(BASE_PATH, "!!!!!!!")
 
 import sys
 sys.path.append(BASE_PATH)
@@ -121,8 +122,6 @@ def main(args):
 
   linear_model, optimizer = get_model_and_optimizer()
 
-  wandb.watch(linear_model)
-
   print("#" * 50, 1)
 
   training_loop(
@@ -153,4 +152,3 @@ if __name__ == "__main__":
   args = parser.parse_args()
 
   main(args)
-
